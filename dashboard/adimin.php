@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>Dashboard Admin</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/">
 
     
 
@@ -56,39 +56,21 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="adimin.php">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file"></span>
-              Orders
+            <a class="nav-link" href="DashboardService.php">
+              <span data-feather="briefcase"></span>
+              Services
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Integrations
+            <a class="nav-link" href="DashboardBlogActualite.php">
+              <span data-feather="bookmark"></span>
+              Blog de Actualite
             </a>
           </li>
         </ul>
@@ -101,6 +83,10 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
         </div>
+        <div class="my-4">
+        <!-- Contenido del nuevo div -->
+        <p>page principale</p>
+       </div>
     </main>
   </div>
 </div>

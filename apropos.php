@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!doctype php>
+<php lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -55,26 +55,26 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Accueil</a>
+                <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="service.html">Services</a>
+                <a class="nav-link" aria-current="page" href="service.php">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blogActualites.html">Blog/Actualités</a>
+                <a class="nav-link" href="blogActualites.php">Blog/Actualités</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="apropos.html">À Propos</a>
+                <a class="nav-link" href="apropos.php">À Propos</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact.php">Contact</a>
               </li>
             </ul>
     
                 <div class="container-hero" >
         <div class="container hero d-flex justify-content-end align-items-center">
             <div class="container-user">
-                <a href="dashboard/adimin.html"><i class="fa-solid fa-user"></i></a>
+                <a href="dashboard/adimin.php"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
     </div>
@@ -110,19 +110,19 @@
         <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 text-dark"><strong>Link</strong></p>
             <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="index.html">Accueil</a>
+                <a class="text-dark text-decoration-none" href="index.php">Accueil</a>
             </div>
             <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="service.html">Services</a>
+                <a class="text-dark text-decoration-none" href="service.php">Services</a>
             </div>
             <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="blogActualites.html">Blog/Actualités</a>
+                <a class="text-dark text-decoration-none" href="blogActualites.php">Blog/Actualités</a>
             </div>
             <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="apropos.html">À Propos</a>
+                <a class="text-dark text-decoration-none" href="apropos.php">À Propos</a>
             </div>
                <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="contact.html">Contact</a>
+                <a class="text-dark text-decoration-none" href="contact.php">Contact</a>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
@@ -154,4 +154,4 @@
 			crossorigin="anonymous"
 		></script>
   </body>
-</html>
+</php>
