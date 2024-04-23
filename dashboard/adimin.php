@@ -62,7 +62,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="DashboardService.php">
+            <a class="nav-link" href="dashboarServices/DashboardService.php">
               <span data-feather="briefcase"></span>
               Services
             </a>
@@ -80,14 +80,22 @@
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
-        </div>
-        <div class="my-4">
-        <!-- Contenido del nuevo div -->
-        <p>page principale</p>
-       </div>
-    </main>
+    </div>
+    <div class="my-4 welcome-message text-center">
+    <h2>Bienvenue dans le panneau d'administration</h2>
+        <img src="../img/slide3.jpg" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
+        <?php
+        $nombre = "Juan";
+        $apellido = "Pérez";
+        $email = "juan@example.com";
+        ?>
+        <p style="font-size: 17px;"><strong class="text-primary">Utilisateur: </strong> <?php echo $nombre . " " . $apellido; ?></p>
+        <p style="font-size: 17px;"><strong class="text-primary">E-mail: </strong> <?php echo $email; ?></p>
+    </div>
+</main>
+
   </div>
 </div>
 
