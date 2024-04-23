@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['email']) && isset($_SESSION['userid'])){
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -56,7 +61,7 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Sign out</a>
+        <a class="nav-link px-3" href="../../PHP/logout.php">Sign out</a>
       </div>
     </div>
   </header>
@@ -268,3 +273,8 @@
 </body>
 
 </html>
+<?php
+}else{
+  header("location: ../../index.php");
+}
+?>
