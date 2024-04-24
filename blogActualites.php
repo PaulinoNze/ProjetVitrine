@@ -10,7 +10,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="./css/main.css">
-
+        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
         <title>ExpertD.</title>
         <style>
             .text-decoration-none:hover {
@@ -28,6 +33,19 @@
                 margin-top: 2px;
                 /* Espacio entre el texto y la línea */
             }
+            .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
             .nav-link:hover {
                 text-decoration: none;
@@ -106,45 +124,72 @@
         <!--========================================================== -->
         <!--CONTENT-->
         <!--========================================================== -->
-        <section class="container blogs">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2 class="heading-1 text-primary"><strong>Blogs et Actualités</strong></h2>
-        </div>
+
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
     </div>
+  </div>
+
+  <div class="row mb-2">
+  <div class="container">
     <div class="row">
         <?php
         include_once 'PHP/functions.php';
         include 'database.php';
-        $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+        $sql = "SELECT * FROM blog";
         $result = mysqli_query($conn, $sql);
+        $count = 0; // Contador para dividir los blogs en dos columnas
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-            <div class="col-md-4"> <!-- Note this line -->
-                <div class="card-blog">
-                    <div class="container-img">
-                        <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="Imagen service 1" style="width: 500px; height: 300px; object-fit: cover;"/>
-                    </div>
-                    <div class="content-blog">
-                        <h4><strong><?php echo $row['blogNom']; ?></strong> </h4>
-                        <span class="text-primary"><?php echo formatDate($row['datePublished']); ?></span>
-                        <p style="width: 400px; height: 100px; object-fit: cover;">
-                            <?php echo $row['description']; ?>
-                        </p>
-                        <div class="btn-read-more"><a href="blogContent.php?id=<?php echo $row['blogid']?>" style="color: white; text-decoration: none;">En savoir plus</a></div>
+                ?>
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title"><?php echo $row['blogNom']; ?></h3>
+                                    <p class="card-text"><?php echo $row['description']; ?></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a href="blogContent.php?id=<?php echo $row['blogid']?>" class="btn btn-sm btn-outline-secondary">En savoir plus</a>
+                                        </div>
+                                        <small class="text-muted"><?php echo formatDate($row['datePublished']); ?></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" class="img-fluid" style="height: 200px;" alt="Imagen del blog">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> <!-- Note this line -->
-        <?php
+                <?php
+                $count++;
+                if ($count % 2 == 0) {
+                    echo '</div><div class="row">';
+                }
             }
         } else {
-            echo "<h4><strong>Aucun blog pour le moment</strong>";
+            echo "<div class='col p-4 d-flex flex-column position-static'>Aucun blog pour le moment</div>";
         }
         ?>
     </div>
-</section>
+</div>
 
+
+</div>
+
+
+  </div>
+
+
+
+</main>
         <!--========================================================== -->
         <!--FOOTER-->
         <!--========================================================== -->
@@ -197,6 +242,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+        <script>
+  feather.replace();
+</script>
     </body>
 </php>

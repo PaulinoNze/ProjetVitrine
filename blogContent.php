@@ -106,7 +106,7 @@
         <!--========================================================== -->
         <!--CONTENT-->
         <!--========================================================== -->
-        <section class="section blog-wrap bg-gray" style="background-color: #f0f0f0;">
+        <section class="section blog-wrap bg-gray" >
             <br>
             <?php
             include "database.php";
@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="row">
-                            <div class="col-lg-12 mb-5">
+                            <div class="col-lg-12 mb-5 border rounded shadow-lg">
                                 <div class="single-blog-item">
                                     <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" class="img-fluid rounded" style="width: 1000px; height: 500px; object-fit: cover;">
 
@@ -139,7 +139,7 @@
                             </div>
 
 
-                            <div class="col-lg-12 mb-5">
+                            <div class="col-lg-12 mb-5 border rounded shadow-lg">
                                 <div class="posts-nav bg-white p-5 d-lg-flex d-md-flex justify-content-between">
                                     <?php
                                     // Query for previous post
@@ -150,8 +150,10 @@
                                     if ($rowPrevious) {
                                         echo '<a class="post-prev align-items-center" href="blogContent.php?id=' . $rowPrevious['blogid'] . '">';
                                         echo '<div class="posts-prev-item mb-4 mb-lg-0">';
-                                        echo '<span class="nav-posts-desc text-color">- Article précédent</span>';
-                                        echo '<h6 class="nav-posts-title mt-1">' . $rowPrevious['blogNom'] . '</h6>';
+                                        echo '<span class="nav-posts-desc text-color text-decoration-none">';
+                                        echo '<i class="fas fa-chevron-left"></i>';
+                                        echo '</span>';
+                                        echo '<h6 class="nav-posts-title mt-1 text-decoration-none">' . $rowPrevious['blogNom'] . '</h6>';
                                         echo '</div></a>';
                                     }
 
@@ -164,8 +166,10 @@
                                         echo '<div class="border"></div>';
                                         echo '<a class="posts-next" href="blogContent.php?id=' . $rowNext['blogid'] . '">';
                                         echo '<div class="posts-next-item pt-4 pt-lg-0">';
-                                        echo '<span class="nav-posts-desc text-lg-right text-md-right text-color d-block">- Article suivant</span>';
-                                        echo '<h6 class="nav-posts-title mt-1">' . $rowNext['blogNom'] . '</h6>';
+                                        echo '<span class="nav-posts-desc text-lg-right text-md-right text-color d-block">';
+                                        echo '<i class="fas fa-chevron-right"></i> ';
+                                        echo '</span>';
+                                        echo '<h6 class="nav-posts-title mt-1 text-decoration-none">' . $rowNext['blogNom'] . '</h6>';
                                         echo '</div></a>';
                                     }
                                     ?>
@@ -181,7 +185,7 @@
                             $row = mysqli_fetch_array($result)
 
                             ?>
-                            <div class="col-lg-12 mb-5">
+                            <div class="col-lg-12 mb-5 border rounded shadow-lg">
                                 <div class="comment-area card border-0 p-5" style="height: 450px; overflow-y: auto;">
                                     <h4 class="mb-4">Commentaires (<?php echo $row['count(commentaire)']; ?>)</h4>
                                     <ul class="comment-tree list-unstyled">
@@ -217,7 +221,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 border rounded shadow-lg">
                                 <form class="contact-form bg-white rounded p-5" id="comment-form" method="post" action="PHP/ajoutCommentaire.php">
                                     <h4 class="mb-4">Écrire un commentaire</h4>
                                     <div class="row">
@@ -241,10 +245,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="sidebar-wrap">
+                    <div class="col-lg-4 ">
+                        <div class="sidebar-wrap ">
 
-                            <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                            <div class="sidebar-widget latest-post card border-0 p-4 mb-3 border rounded shadow-lg">
                                 <h5>Autres blogs</h5>
                                 <?php
                                 include_once 'PHP/functions.php';

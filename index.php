@@ -14,6 +14,43 @@
         <title>ExpertD.</title>
     </head>
     <style>
+        
+ .banner {
+      background-color: #f0f0f0;
+      padding: 50px 0;
+    }
+
+    .content-banner {
+      text-align: center;
+    }
+
+    .container-features {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    .card-img-top {
+        max-width: 80%;
+        height: 340px;
+    }
+    .card-feature {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 0 0 calc(25% - 20px);
+    }
+
+    .feature-content {
+      text-align: center;
+    }
+
+    /* Estilos para la sección fuera de la sección */
+    .external-div {
+      background-color: white;
+      padding: 50px;
+      text-align: center;
+    }
         .numbered-list ol {
             list-style: none;
             counter-reset: li;
@@ -258,91 +295,47 @@
         <!--========================================================== -->
         <!-- TIPOS DE SERVICIOS -->
         <!--========================================================== -->
-        <section class="container blogs">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="heading-1 text-primary"><strong>Tipos de Servicios</strong></h2>
-                </div>
-            </div>
-            <div class="container-blogs">
-                <div class="card-blog">
-                    <div class="container-img">
-                        <img src="img/slide2.jpg" alt="Imagen service 1" />
-                        <div class="button-group-blog">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-link"></i>
-                            </span>
+        <section>
+<div class="external-div" id="service">
+<h2 class="text-primary"><strong>Découvrez notre sélection de services !</strong></h2>
+     <p>Explorez une variété de services uniques.</p>
+    <?php
+include 'dashboard/dashboarServices/conexion.php';
+$sql = "SELECT * from service LIMIT 3";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    ?>
+    <div class="row">
+        <?php
+        while ($row = mysqli_fetch_array($result)) {
+            ?>
+            <div class="col-md-4">
+                <div class="card mb-4" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                    <div class="box-image3__box">
+                      <br>
+                        <!-- Corregir la ruta de la imagen -->
+                        <img src="<?php echo 'dashboard/dashboarServices/' . $row['image']; ?>" class="card-img-top custom-img" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title course-title text-primary" style="font-size: 25px;"><strong><?php echo $row['nom']; ?></strong></h2>
+                        <p class="card-text"><?php echo $row['description']; ?></p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <i class="fas fa-calendar-alt mr-2 text-primary"></i>
+                                <?php echo $row['date']; ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="content-blog">
-                        <h4><strong>Lorem, ipsum dolor sit</strong> </h4>
-                        <span class="text-primary">29 Noviembre 2022</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Iste, molestiae! Ratione et, dolore ipsum
-                            quaerat iure illum reprehenderit non maxime amet dolor
-                            voluptas facilis corporis, consequatur eius est sunt
-                            suscipit?
-                        </p>
-                        <div class="btn-read-more">Leer más</div>
-                    </div>
-                </div>
-                <div class="card-blog">
-                    <div class="container-img">
-                        <img src="img/slide2.jpg" alt="Imagen service 2" />
-                        <div class="button-group-blog">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-link"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-blog">
-                        <h4><strong>Lorem, ipsum dolor sit</strong> </h4>
-                        <span class="text-primary">29 Noviembre 2022</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Iste, molestiae! Ratione et, dolore ipsum
-                            quaerat iure illum reprehenderit non maxime amet dolor
-                            voluptas facilis corporis, consequatur eius est sunt
-                            suscipit?
-                        </p>
-                        <div class="btn-read-more">Leer más</div>
-                    </div>
-                </div>
-                <div class="card-blog">
-                    <div class="container-img">
-                        <img src="img/slide3.jpg" alt="Imagen service 3" />
-                        <div class="button-group-blog">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-link"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-blog">
-                        <h4><strong>Lorem, ipsum dolor sit</strong> </h4>
-                        <span class="text-primary">29 Noviembre 2022</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Iste, molestiae! Ratione et, dolore ipsum
-                            quaerat iure illum reprehenderit non maxime amet dolor
-                            voluptas facilis corporis, consequatur eius est sunt
-                            suscipit?
-                        </p>
-                        <div class="btn-read-more">Leer más</div>
                     </div>
                 </div>
             </div>
-        </section>
-
+            <?php
+        }
+        ?>
+    </div>
+    <?php
+}
+?>
+</section>
 
         <!--========================================================== -->
         <!--FOOTER-->
@@ -398,6 +391,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+        <script>
+  feather.replace();
+</script>
     </body>
 </php>
