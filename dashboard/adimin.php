@@ -92,12 +92,19 @@ if(isset($_SESSION['userid']) && isset($_SESSION['email'])){
     <h2>Bienvenue dans le panneau d'administration</h2>
         <img src="../img/slide3.jpg" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
         <?php
-        $nombre = "Juan";
-        $apellido = "Pérez";
-        $email = "juan@example.com";
+        include '../database.php';
+        $userid = $_SESSION['userid'];
+        $sql = "SELECT nom, prenom, email FROM users WHERE userid = $userid";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
         ?>
-        <p style="font-size: 17px;"><strong class="text-primary">Utilisateur: </strong> <?php echo $nombre . " " . $apellido; ?></p>
-        <p style="font-size: 17px;"><strong class="text-primary">E-mail: </strong> <?php echo $email; ?></p>
+        <?php if(isset($_GET['message'])){ ?>
+            <p class = "message" style="color: green;"> <?php echo $_GET['message']; ?></p>
+          <?php } ?>
+        <p style="font-size: 17px;"><strong class="text-primary">Utilisateur: </strong> <?php echo $row['prenom'] . " " . $row['nom']; ?></p>
+        <p style="font-size: 17px;"><strong class="text-primary">E-mail: </strong> <?php echo $row['email']; ?></p>
+        <p style="font-size: 17px;"><a href="modifierCompte.php" style="text-decoration: none;"><strong class="text-primary">Modifier les informations du compte</a></strong></p>
+        <p style="font-size: 17px;"><a href="modifierPassword.php" style="text-decoration: none;"><strong class="text-danger">Changer le mot de passe</a></strong></p>
     </div>
 </main>
 

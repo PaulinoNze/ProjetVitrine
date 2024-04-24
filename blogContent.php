@@ -106,7 +106,7 @@
         <!--========================================================== -->
         <!--CONTENT-->
         <!--========================================================== -->
-        <section class="section blog-wrap bg-gray" style="background-color: gray;">
+        <section class="section blog-wrap bg-gray" style="background-color: #f0f0f0;">
             <br>
             <?php
             include "database.php";
