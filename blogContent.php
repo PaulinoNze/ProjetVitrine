@@ -156,7 +156,7 @@
                                     }
 
                                     // Query for next post
-                                    $sqlNext = "SELECT * FROM blog WHERE blogid > $blogid ORDER BY blogid ASC LIMIT 1";
+                                    $sqlNext = "SELECT * FROM blog WHERE blogid > $blogid ORDER BY datePublished DESC LIMIT 1";
                                     $resultNext = mysqli_query($conn, $sqlNext);
                                     $rowNext = mysqli_fetch_assoc($resultNext);
 

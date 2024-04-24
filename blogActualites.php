@@ -129,7 +129,7 @@
                     <div class="content-blog">
                         <h4><strong><?php echo $row['blogNom']; ?></strong> </h4>
                         <span class="text-primary"><?php echo formatDate($row['datePublished']); ?></span>
-                        <p>
+                        <p style="width: 400px; height: 100px; object-fit: cover;">
                             <?php echo $row['description']; ?>
                         </p>
                         <div class="btn-read-more"><a href="blogContent.php?id=<?php echo $row['blogid']?>" style="color: white; text-decoration: none;">En savoir plus</a></div>

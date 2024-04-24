@@ -198,13 +198,101 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                   </div>
                 </div>
               </div>
+              <div class="col-lg-6 " style="height: 450px; overflow-y: auto;">
+                <div class="sidebar-wrap">
+
+                  <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h4 class="mb-0">Blogs</h4>
+                      <h5 class="mb-0"><a href="#" style="color: red; text-decoration: none;" onclick="deleteAllBlogs(event)">Supprimer tout</a></h5>
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                      <script>
+                        function deleteAllBlogs(event) {
+                          event.preventDefault(); // Prevent the default action of the anchor tag
+                          $.ajax({
+                            url: '../PHP/deleteAllBlogs.php',
+                            type: 'POST',
+                            success: function(response) {
+                              window.location.reload(); // Reload the page after successful deletion
+                            },
+                            error: function(xhr, status, error) {
+                              console.error(xhr.responseText);
+                              alert('An error occurred. Please try again.'); // Display an error message to the user
+                            }
+                          });
+                        }
+                      </script>
+                    </div>
+                    <?php
+                    include_once '../PHP/functions.php';
+                    include '../database.php';
+                    $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <div class="media border-bottom py-3 d-flex align-items-center">
+                          <!-- Image -->
+                          <a href="<?php echo $row['blogid']; ?>">
+                            <img class="mr-4" src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" width="50px" style="margin-right: 10px;" class="img-fluid rounded">
+                          </a>
+                          <!-- Media Body (Blog Name and Date) -->
+                          <div class="media-body d-flex justify-content-between align-items-center w-100">
+                            <!-- Blog Name -->
+                            <div>
+                              <h6 class="my-2">
+                                <a href="../blogContent.php?id=<?php echo $row['blogid']; ?>"><?php echo $row['blogNom']; ?></a>
+                              </h6>
+                              <!-- Date Published -->
+                              <span class="text-sm text-muted"><?php echo formatDate($row['datePublished']); ?></span>
+                            </div>
+                            <!-- Delete Button -->
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete_employee" onclick="deleteblog(<?php echo $row['blogid']; ?>)">
+                              <small>Supprimer</small>
+                            </button>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                  <script>
+                                    function deleteblog(blogid) {
+                                      $.ajax({
+                                        url: '../PHP/deleteblog.php',
+                                        type: 'POST',
+                                        data: {
+                                          blogid: blogid
+                                        },
+                                        success: function(response) {
+                                          window.location.reload();
+                                        },
+                                        error: function(xhr, status, error) {
+                                          console.error(xhr.responseText);
+                                        }
+                                      });
+                                    }
+                                  </script>
+                          </div>
+                        </div>
+
+                    <?php
+                      }
+                    } else {
+                      echo "<h6><strong>Aucun blog pour le moment</strong></h6>";
+                    }
+                    ?>
+                  </div>
+
+
+
+                </div>
+              </div>
             </div>
           </div>
-
-
-        </main>
-
       </div>
+
+
+
+
+      </main>
+
+    </div>
     </div>
 
 
