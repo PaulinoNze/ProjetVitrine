@@ -112,7 +112,7 @@
             include "database.php";
             include_once 'PHP/functions.php';
             $blogid = $_GET['id'];
-            $sql = "SELECT * FROM blog WHERE blogid = $blogid";
+            $sql = "SELECT * FROM blog WHERE blogid = $blogid ORDER BY blogid ASC";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_array($result);
             ?>
@@ -130,8 +130,9 @@
                                                 <?php echo formatDate($row['datePublished']); ?></span>
                                         </div>
 
-                                        <h2 class="mt-3 mb-4"><a href="blog-single.html"><?php echo $row['blogNom'] ?></a></h2>
-                                        <p class="lead mb-4"><?php echo $row['content'] ?></p>
+                                        <h2 class="mt-3 mb-4"><?php echo $row['blogNom'] ?></h2>
+                                        <p class="lead mb-4"><?php echo nl2br($row['content']); ?></p>
+
 
                                     </div>
                                 </div>
@@ -199,7 +200,7 @@
                                                         <div>
                                                             <h5 class="mb-1"><?php echo $row['prenom'] . " " . $row['nom']; ?></h5> <!-- Name -->
                                                             <span class="date-comm">Publié <?php echo formatDate($row['datePublished']); ?></span> <!-- Date published -->
-                                                            <p class="mt-3 mb-0"><?php echo $row['commentaire']; ?></p> <!-- Comment content with top margin -->
+                                                            <p class="mt-3 mb-0"><?php echo nl2br($row['commentaire']); ?></p> <!-- Comment content with top margin -->
                                                         </div>
                                                     </div>
                                                 </li>

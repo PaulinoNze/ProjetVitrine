@@ -73,7 +73,7 @@
                 <div class="container-hero" >
         <div class="container hero d-flex justify-content-end align-items-center">
             <div class="container-user">
-                <a href="dashboard/adimin.php"><i class="fa-solid fa-user"></i></a>
+                <a href="login/login.php"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
     </div>
@@ -106,8 +106,7 @@
         
         <div>
             <div class="wrapper-local">
-                <h2>Ubicado en Miami, Florida</h2>
-                <h2 class="text-primary mb-4" id="typewriter"></h2>
+                <h2>Dakhla, Morocco</h2>
                 <p class="fs-5 text-body">Elijimos Miami para nuestra oficina con el objetivo de estar cerca a nuestros clientes. Estamos ubicados en Brickell, el corazon y el centro financiero de Miami, cerca de los mejores restaurantes, tiendas y tan solo 15 minutos de las playas. ¡Visitennos y no se arrepentiran!</p>
                 <section class="d-flex justify-content-start" id="numeros-local">
                     <div>
@@ -147,25 +146,28 @@
   <div class="container  border-top border-primary " style="max-width: 500px" id="contenedor-formulario">
       <div class="text-center mb-4" id="titulo-formulario">
         <div><img src="./img/support.png" alt="" class="img-fluid ps-5"></div>
-        <h2>Contactanos</h2>
-        <p class="fs-5">Estamos aqui para hacer realidad de tus proyectos</p>
+        <h2>Contactez-nous</h2>
+        <p class="fs-5">Nous sommes là pour concrétiser vos projets</p>
       </div>
 
      
 
-      <form   method="POST" data-netlify="true" action="#">     
+      <form   method="POST" data-netlify="true" action="PHP/contact.php">
+      <?php if(isset($_GET['message'])){ ?>
+            <p class = "message" style="color: green;"> <?php echo $_GET['message']; ?></p>
+          <?php } ?>     
             <div class= "mb-3">           
-              <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
             </div>
  
           
             <div class="mb-3">            
-              <input type="input" class="form-control" id="name" name="name" placeholder="John Doe">
+              <input type="input" class="form-control" id="name" name="name" placeholder="Nom et Prenom">
             </div>
       
 
             <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telephone">
             </div>
 
           <div class="mb-3">       
@@ -173,7 +175,7 @@
           </div>
 
           <div class="mb-3">
-            <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
+            <button type="submit" class=" btn btn-primary w-100 fs-5">Message envoyé</button>
           </div>
       </form>
   
