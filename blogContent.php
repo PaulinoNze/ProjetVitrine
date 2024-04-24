@@ -122,7 +122,7 @@
                         <div class="row">
                             <div class="col-lg-12 mb-5">
                                 <div class="single-blog-item">
-                                    <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" class="img-fluid rounded">
+                                    <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" class="img-fluid rounded" style="width: 1000px; height: 500px; object-fit: cover;">
 
                                     <div class="blog-item-content bg-white p-5">
                                         <div class="blog-item-meta bg-gray py-1 px-2">
@@ -150,7 +150,7 @@
                                     if ($rowPrevious) {
                                         echo '<a class="post-prev align-items-center" href="blogContent.php?id=' . $rowPrevious['blogid'] . '">';
                                         echo '<div class="posts-prev-item mb-4 mb-lg-0">';
-                                        echo '<span class="nav-posts-desc text-color">- Previous Post</span>';
+                                        echo '<span class="nav-posts-desc text-color">- Article précédent</span>';
                                         echo '<h6 class="nav-posts-title mt-1">' . $rowPrevious['blogNom'] . '</h6>';
                                         echo '</div></a>';
                                     }
@@ -164,7 +164,7 @@
                                         echo '<div class="border"></div>';
                                         echo '<a class="posts-next" href="blogContent.php?id=' . $rowNext['blogid'] . '">';
                                         echo '<div class="posts-next-item pt-4 pt-lg-0">';
-                                        echo '<span class="nav-posts-desc text-lg-right text-md-right text-color d-block">- Next Post</span>';
+                                        echo '<span class="nav-posts-desc text-lg-right text-md-right text-color d-block">- Article suivant</span>';
                                         echo '<h6 class="nav-posts-title mt-1">' . $rowNext['blogNom'] . '</h6>';
                                         echo '</div></a>';
                                     }
@@ -250,15 +250,15 @@
                                 include_once 'PHP/functions.php';
                                 include 'database.php';
                                 $blogid = $_GET['id'];
-                                $sql = "SELECT * FROM blog WHERE blogid <> $blogid";
+                                $sql = "SELECT * FROM blog WHERE blogid <> $blogid ORDER BY datePublished DESC";
                                 $result = mysqli_query($conn, $sql);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_array($result)) {
                                 ?>
-                                        <div class="media border-bottom py-3 d-flex align-items-center">
+                                        <div class="media border-bottom py-3 d-flex align-items-center" >
                                             <!-- Image -->
                                             <a href="<?php echo $row['blogid']; ?>">
-                                                <img class="mr-4" src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" width="50px" style="margin-right: 10px;">
+                                                <img class="mr-4" src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" width="50px" style="margin-right: 10px;" class="img-fluid rounded">
                                             </a>
                                             <!-- Media Body (Blog Name and Date) -->
                                             <div class="media-body">

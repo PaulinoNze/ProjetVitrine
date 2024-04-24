@@ -124,7 +124,7 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                     <div class="comment-area card border-0 p-5" style="height: 450px; overflow-y: auto;">
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <h4 class="mb-0">Messages (<?php echo $row['count(*)']; ?>)</h4>
-                        <h5 class="mb-0"><a href="#" style="color: red;" onclick="deleteAll(event)">Supprimer tout</a></h5>
+                        <h5 class="mb-0"><a href="#" style="color: red; text-decoration: none;" onclick="deleteAll(event)">Supprimer tout</a></h5>
 
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                         <script>

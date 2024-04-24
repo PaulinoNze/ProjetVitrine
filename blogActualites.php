@@ -116,7 +116,7 @@
         <?php
         include_once 'PHP/functions.php';
         include 'database.php';
-        $sql = "SELECT * FROM blog";
+        $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -124,7 +124,7 @@
             <div class="col-md-4"> <!-- Note this line -->
                 <div class="card-blog">
                     <div class="container-img">
-                        <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="Imagen service 1" />
+                        <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="Imagen service 1" style="width: 500px; height: 300px; object-fit: cover;"/>
                     </div>
                     <div class="content-blog">
                         <h4><strong><?php echo $row['blogNom']; ?></strong> </h4>
