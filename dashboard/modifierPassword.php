@@ -8,8 +8,8 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Vitrine</title>
-        <link rel="shortcut icon" type="image/png" href="../login/assets/images/logos/favicon.png" />
+        <title>ABDO SARL</title>
+        <link rel="shortcut icon" type="image/png" href="../img/log.png" />
         <link rel="stylesheet" href="../login/assets/css/styles.min.css" />
     </head>
 
@@ -23,9 +23,9 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                             <div class="card mb-0">
                                 <div class="card-body">
                                     <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                        <img src="../login/assets/images/logos/dark-logo.svg" width="180" alt="">
+                                        <img src="../img/log.png" width="180" alt="">
                                     </a>
-                                    <p class="text-center">Your Social Campaigns</p>
+                                    <p class="text-center"> B2B2C ABDO SARL</p>
                                     <form action="../PHP/modifierPassword.php" method="POST">
                                         <?php if (isset($_GET['error'])) { ?>
                                             <p class="w-100 text-center" style="color: red;"> <?php echo $_GET['error']; ?></p>

@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vitrine</title>
+    <title>ABDO SARL</title>
     <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
+    <meta name="author" content="paulino nze, syabonga">
     <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <link rel="icon" href="../img/log.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -19,9 +22,9 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <img src="assets/images/logos/dark-logo.svg" width="180" alt="">
+                                    <img src="../img/log.png" width="180" alt="">
                                 </a>
-                                <p class="text-center">Your Social Campaigns</p>
+                                <p class="text-center">ABDO SARL</p>
                                 <form action="loginAuth.php" method="POST">
                                 <?php if (isset($_GET['error'])) { ?>
         <p class="w-100 text-center" style="color: red;"> <?php echo $_GET['error']; ?></p>

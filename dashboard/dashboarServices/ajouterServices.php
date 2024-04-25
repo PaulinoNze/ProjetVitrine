@@ -2,8 +2,8 @@
 include 'conexion.php';
 
 // Variables del formulario
-$nom = $_REQUEST['nom'];
-$description = $_REQUEST['description'];
+$nom = mysqli_real_escape_string($conn, $_REQUEST['nom']);
+$description = mysqli_real_escape_string($conn, $_REQUEST['description']);
 
 // Variables del archivo de imagen
 $image = $_FILES['image']['name'];

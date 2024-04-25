@@ -5,6 +5,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="paulino nze, syabonga">
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -16,11 +17,12 @@
         <!-- Owl Carousel CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="icon" href="img/log.png" type="image/x-icon">
 
         <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="heroes.css" rel="stylesheet">
 
-        <title>ExpertD.</title>
+        <title>ABDO SARL</title>
         <style>
             .img-team {
                 max-width: 100px;
@@ -128,8 +130,8 @@
                             <div class="customer-support">
                                 <i class="fa-solid fa-headset"></i>
                                 <div class="content-customer-support">
-                                    <span class="text">Soporte al cliente</span>
-                                    <span class="number">123-456-7890</span>
+                                    <span class="text">Soutien à la clientèle</span>
+                                    <span class="number"> 0761816135</span>
                                 </div>
                             </div>
                         </div>
@@ -141,10 +143,10 @@
 
         <main class="border-top border-3">
             <div class="px-4 py-5 my-5 text-center">
-                <img class="d-block mx-auto mb-4" src="assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                <h1 class="display-5 fw-bold">Nom de l'entreprise</h1>
+                <img class="d-block mx-auto mb-4" src="img/log.png" alt="" width="230" height="150">
+                <h1 class="display-5 fw-bold">B2B2C ABDO SARL</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sit possimus explicabo!</p>
+                    <p class="lead mb-4">Notre société de marketing digital se spécialise dans le renforcement de la présence en ligne des entreprises de toutes tailles. Avec des stratégies innovantes et une approche axée sur les résultats, nous aidons nos clients à atteindre leurs objectifs commerciaux grâce à des campagnes efficaces sur les réseaux sociaux, la publicité en ligne, l'optimisation des moteurs de recherche et le développement web. </p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
                     </div>
@@ -156,11 +158,15 @@
             <div class="px-4 pt-5 my-5 text-center border-bottom">
                 <h1 class="display-4 fw-bold text-primary">La maison de l'entreprise</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat reprehenderit saepe voluptatum odit nemo dignissimos consequatur nisi, unde ipsum quis in modi eos velit, quas laudantium tempora eveniet autem. Quia?</p>
+                    <p class="lead mb-4">ABDO SARL, une entreprise ancrée au cœur de Dakhla
+
+                        Implantée dans la ville de Dakhla, au coeur de la région du Sahara marocain, ABDO SARL a choisi ce lieu stratégique pour développer ses activités. Notre siège social se trouve dans le quartier dynamique de Molay Rachid, une zone en pleine expansion économique et entrepreneuriale.
+
+                        Ce positionnement géographique nous permet d'être au plus près de nos clients et de nos partenaires, tout en bénéficiant des atouts de la région. La ville de Dakhla, véritable hub économique de la zone, offre un environnement propice aux affaires grâce à ses infrastructures modernes et son réseau de transport performant.</p>
                 </div>
                 <div class="overflow-hidden" style="max-height: 30vh;">
                     <div class="container px-5">
-                        <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+                        <img src="img/casa.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="600" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -169,10 +175,18 @@
                 <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                     <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
                         <h1 class="display-4 fw-bold lh-1 text-primary"> Historique de la société</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit mollitia ex praesentium rerum corporis repellat? Saepe ex quasi nisi, eligendi dignissimos perferendis unde ad, aspernatur totam laudantium, architecto quia maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deserunt praesentium natus voluptatum fuga optio iste eum. Voluptatibus debitis iste atque. Iure, excepturi. Doloribus deserunt id consequatur atque voluptatum?</p>
+                        <p class="lead">Beaucoup d’entreprises essaient de profiter des atouts d’Internet, notamment de
+                            sa puissance de diffusion, en menant des actions dites de marketing digital. Ce
+                            dernier se définit comme une action menée par une entreprise afin de se faire
+                            connaître auprès d’un maximum d’internautes grâce à leur positionnement (c’est
+                            pourquoi on parle aussi parfois de réseautage). Il s’agit donc d’une technique
+                            reposant sur la transmission de proche en proche, par la méthode digitalisation
+                            (Facebook, Twitter, Instagram, WhatsApp…), de messages commerciaux, les
+                            consommateurs devenant, gratuitement, notamment les meilleurs commerciaux
+                            de la marque.</p>
                     </div>
                     <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                        <img class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">
+                        <img class="rounded-lg-3" src="img/casa2.jpg" alt="" width="720">
                     </div>
                 </div>
             </div>
@@ -185,8 +199,8 @@
                         <div class="card h-100">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del director">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du directeur</h5>
-                                <p class="card-text">Poste : Directeur</p>
+                                <h5 class="card-title">Abdelghafour ELOUARDI</h5>
+                                <p class="card-text">Poste : Gérant et Social seller</p>
                             </div>
                         </div>
                     </div>
@@ -195,8 +209,10 @@
                         <div class="card h-100">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del subdirector">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du directeur adjoint</h5>
-                                <p class="card-text">Poste : Directeur adjoint</p>
+                                <h5 class="card-title">Yassine OUSSAID</h5>
+                                <p class="card-text">Poste : Responsable
+                                    Commercial
+                                    FOOD</p>
                             </div>
                         </div>
                     </div>
@@ -205,8 +221,9 @@
                         <div class="card h-100">
                             <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del técnico">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du technicien</h5>
-                                <p class="card-text">Poste : Technicien</p>
+                                <h5 class="card-title">Halima LAAFAR</h5>
+                                <p class="card-text">Poste : Réception
+                                    et Suivi</p>
                             </div>
                         </div>
                     </div>
@@ -215,8 +232,9 @@
                         <div class="card h-100">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del de Recursos Humanos">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom des ressources humaines</h5>
-                                <p class="card-text">Poste : Ressources humaines</p>
+                                <h5 class="card-title">Mohamed Ahboub</h5>
+                                <p class="card-text">Poste : Social media
+                                    manager</p>
                             </div>
                         </div>
                     </div>
@@ -225,8 +243,10 @@
                         <div class="card h-100">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del Secretario 1">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du secrétaire 1</h5>
-                                <p class="card-text">Poste : Secrétaire</p>
+                                <h5 class="card-title">Chakir MRANI
+                                </h5>
+                                <p class="card-text">Poste : Service de
+                                    Confirmation</p>
                             </div>
                         </div>
                     </div>
@@ -235,40 +255,14 @@
                         <div class="card h-100">
                             <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del Secretario 2">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du secrétaire 2</h5>
-                                <p class="card-text">Poste : Secrétaire</p>
+                                <h5 class="card-title">Chadi KACIMI</h5>
+                                <p class="card-text">Poste : Responsable
+                                    Commercial
+                                    EXPRESS</p>
                             </div>
                         </div>
                     </div>
                     <!-- Empleado 1 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del empleado 1">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Nom de l'employé 1</h5>
-                                <p class="card-text">Poste : Employé</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Empleado 2 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del empleado 2">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Nom de l'employé 2</h5>
-                                <p class="card-text">Poste : Employé</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del empleado 2">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Nom de l'employé 2</h5>
-                                <p class="card-text">Poste : Employé</p>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Agregar más tarjetas para más miembros del equipo -->
                 </div>
             </section>
@@ -282,8 +276,8 @@
                         <div class="card no-border">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 1">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du client 1</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis tellus vel neque vehicula gravida.</p>
+                                <h5 class="card-title">Said</h5>
+                                <p class="card-text">Que ce soit pour la restauration, la photographie ou la communication marketing, ABDO SARL a toujours répondu présent. Leur professionnalisme et leur engagement font d'eux un partenaire de confiance au quotidien."</p>
                             </div>
                         </div>
                     </div>
@@ -291,8 +285,8 @@
                         <div class="card no-border">
                             <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 2">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du client 2</h5>
-                                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <h5 class="card-title">Khadija</h5>
+                                <p class="card-text">L'équipe e-commerce d'ABDO SARL a été d'une grande aide pour mettre en place notre boutique en ligne. Leur expertise et leur accompagnement sur-mesure ont boosté nos ventes de manière significative."</p>
                             </div>
                         </div>
                     </div>
@@ -300,8 +294,8 @@
                         <div class="card no-border">
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 2">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nom du client 3</h5>
-                                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <h5 class="card-title">Abdel</h5>
+                                <p class="card-text">Grâce au service de transport de matériaux d'ABDO SARL, j'ai pu mener à bien tous mes chantiers dans les délais impartis. Leur réactivité et leur fiabilité m'ont permis de gagner en productivité et en tranquillité d'esprit."</p>
                             </div>
                         </div>
                     </div>
@@ -319,10 +313,13 @@
 
         <div class="container-fluid d-flex justify-content-center">
             <div class="row p-5 bg-white text-dark border-top border-3">
-                <div class="col-xs-12 col-md-6 col-lg-5">
-                    <p class="h3 mb-3 text-dark"><strong>lorem</strong></p>
-                    <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque, tempora dignissimos, dolore nulla iste quis aut, quos voluptas !</p>
-                </div>
+            <div class="col-xs-12 col-md-6 col-lg-5">
+          <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+          <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et 
+dynamique. Depuis sa création, sous une forme juridique de société commerciale 
+à responsabilité limitée, le transport urbain de marchandises, les opérations de 
+livraison et l’installation des systèmes des caisses.</p>
+        </div>
                 <div class="col-xs-12 col-md-6 col-lg-3">
                     <p class="h5 text-dark"><strong>Link</strong></p>
                     <div class="mb-2">
@@ -344,20 +341,20 @@
                 <div class="col-xs-12 col-md-6 col-lg-4">
                     <p class="h5 mb-3 text-dark"><strong>Contact</strong></p>
                     <div class="mb-2">
-                        <a class="text-dark text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a class="text-dark text-decoration-none" href="https://www.facebook.com/LIVRAISON.DAKHLA?mibextid=LQQJ4d"><i class="fab fa-facebook"></i> Facebook</a>
                     </div>
                     <div class="mb-2">
                         <a class="text-dark text-decoration-none" href="#"><i class="fab fa-twitter"></i> Twitter</a>
                     </div>
                     <div class="mb-2">
-                        <a class="text-dark text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a class="text-dark text-decoration-none" href="https://www.instagram.com/p/CiLYVLmL_tJ/?igsh=czljcDRvNHppMnFl"><i class="fab fa-instagram"></i> Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="bg-secondary text-white">
             <div class="container text-center py-4">
-                <p class="mb-0">&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+                <p class="mb-0">&copy; 2024  B2B2C ABDO SARL. Tous droits réservés.</p>
             </div>
         </footer>
 

@@ -9,9 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.css">
+    <meta name="author" content="paulino nze, syabonga">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="img/log.png" type="image/x-icon">
 
-    <title>ExpertD.</title>
+    <title>ABDO SARL</title>
     <style>
     .text-decoration-none:hover {
         text-decoration: none; /* Elimina el subrayado predeterminado */
@@ -85,7 +87,7 @@
  <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
         <div class="container">
           <a class="navbar-brand" href="#">
-              <span class="fs-5 text-primary fw-bold">ExpertD.</span>
+              <span class="fs-5 text-primary fw-bold">ABDO SARL.</span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -122,9 +124,9 @@
             <div class="customer-support">
                 <i class="fa-solid fa-headset"></i>
                 <div class="content-customer-support">
-                    <span class="text">Soporte al cliente</span>
-                    <span class="number">123-456-7890</span>
-                </div>
+                                    <span class="text">Soutien à la clientèle</span>
+                                    <span class="number"> 0761816135</span>
+                                </div>
             </div>
         </div>
     </div>
@@ -139,13 +141,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="content-banner">
-                    <p class="mt-5">Café Delicioso</p>
-                    <h2 class="mt-5">100% Natural <br> Café Fresco</h2>
-                    <a href="#service" class="btn btn-primary">Comprar ahora</a>
+                    <p class="mt-5"> B2B2C ABDO SARL</p>
+                    <h2 class="mt-5">Services 100% sûrs <br> et efficaces</h2>
+                    <a href="contact.php" class="btn btn-primary">Contacter maintenant</a>
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="img/slide2.jpg" alt="Café Fresco" class="img-fluid">
+                <img src="img/ser2.jpg" alt="Café Fresco" height="500" width="500" >
             </div>
         </div>
     </div>
@@ -156,10 +158,10 @@
     <div class="row justify-content-center">
         <div class="col-lg-3 mt-3 col-md-6 col-sm-12">
             <div class="card-feature d-flex">
-                <i class="fas fa-wallet text-primary fa-2x"></i>
+            <i class="fas fa-shipping-fast text-primary fa-2x"></i>
                 <div class="feature-content ml-3">
-                    <span class="font-weight-bold">Envío gratuito</span>
-                    <p class="small">En pedidos superiores a $150</p>
+                    <span class="font-weight-bold">Livraison gratuite</span>
+                    <p class="small">À partir de 150 DH d'achats</p>
                 </div>
             </div>
         </div>
@@ -167,8 +169,8 @@
             <div class="card-feature d-flex">
                 <i class="fas fa-wallet text-primary fa-2x"></i>
                 <div class="feature-content ml-3">
-                    <span class="font-weight-bold">Contrareembolso</span>
-                    <p class="small">100% garantía de devolución de dinero</p>
+                    <span class="font-weight-bold">Livraison contre remboursement</span>
+                    <p class="small">Garantie de remboursement à 100%</p>
                 </div>
             </div>
         </div>
@@ -176,8 +178,8 @@
             <div class="card-feature d-flex">
                 <i class="fas fa-gift text-primary fa-2x"></i>
                 <div class="feature-content ml-3">
-                    <span class="font-weight-bold">Tarjeta regalo especial</span>
-                    <p class="small">Ofrece bonos especiales con regalo</p>
+                    <span class="font-weight-bold">Carte cadeau spéciale</span>
+                    <p class="small">Offres chèques-cadeaux spéciaux</p>
                 </div>
             </div>
         </div>
@@ -185,8 +187,8 @@
             <div class="card-feature d-flex">
                 <i class="fas fa-headset text-primary fa-2x"></i>
                 <div class="feature-content ml-3">
-                    <span class="font-weight-bold">Servicio al cliente 24/7</span>
-                    <p class="small">Llámenos 24/7 al 123-456-7890</p>
+                    <span class="font-weight-bold">Service client 24h/24 et 7j/7</span>
+                    <p class="small">Appelez-nous 24h/24 et 7j/7 au  0761816135</p>
                 </div>
             </div>
         </div>
@@ -240,9 +242,12 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class="container-fluid d-flex justify-content-center">
     <div class="row p-5 bg-white text-dark border-top border-3">
-        <div class="col-xs-12 col-md-6 col-lg-5">
-            <p class="h3 mb-3 text-dark"><strong>lorem</strong></p>
-            <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque, tempora dignissimos, dolore nulla iste quis aut, quos voluptas !</p>
+    <div class="col-xs-12 col-md-6 col-lg-5">
+          <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+          <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et 
+dynamique. Depuis sa création, sous une forme juridique de société commerciale 
+à responsabilité limitée, le transport urbain de marchandises, les opérations de 
+livraison et l’installation des systèmes des caisses.</p>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-3">
             <p class="h5 text-dark"><strong>Link</strong></p>
@@ -265,22 +270,22 @@ if (mysqli_num_rows($result) > 0) {
         <div class="col-xs-12 col-md-6 col-lg-4">
             <p class="h5 mb-3 text-dark"><strong>Contact</strong></p>
             <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="#"><i class="fab fa-facebook"></i>  Facebook</a>
-            </div>
-            <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="#"><i class="fab fa-twitter"></i>  Twitter</a>
-            </div>
-            <div class="mb-2">
-                <a class="text-dark text-decoration-none" href="#"><i class="fab fa-instagram"></i>  Instagram</a>
-            </div>
+                        <a class="text-dark text-decoration-none" href="https://www.facebook.com/LIVRAISON.DAKHLA?mibextid=LQQJ4d"><i class="fab fa-facebook"></i> Facebook</a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="text-dark text-decoration-none" href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="text-dark text-decoration-none" href="https://www.instagram.com/p/CiLYVLmL_tJ/?igsh=czljcDRvNHppMnFl"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
         </div>
     </div>
 </div>
 <footer class="bg-secondary text-white">
-    <div class="container text-center py-4">
-        <p class="mb-0">&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
-    </div>
-</footer>
+            <div class="container text-center py-4">
+                <p class="mb-0">&copy; 2024  B2B2C ABDO SARL. Tous droits réservés.</p>
+            </div>
+        </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 

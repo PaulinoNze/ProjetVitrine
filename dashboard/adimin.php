@@ -12,6 +12,8 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
+    <link rel="icon" href="../img/log.png" type="image/x-icon">
+
     <title>Dashboard Admin</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/">
@@ -92,7 +94,7 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
           </div>
           <div class="my-4 welcome-message text-center">
             <h2>Bienvenue dans le panneau d'administration</h2>
-            <img src="../img/slide3.jpg" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
+            <img src="../img/log.png" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
             <?php
             include '../database.php';
             $userid = $_SESSION['userid'];

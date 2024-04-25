@@ -3,8 +3,8 @@ include 'conexion.php';
 
 // Variables del formulario
 $id = $_REQUEST['id'];
-$nom = $_REQUEST['nom'];
-$description = $_REQUEST['description'];
+$nom = mysqli_real_escape_string($conn, $_REQUEST['nom']);
+$description = mysqli_real_escape_string($conn, $_REQUEST['description']);
 $date = $_REQUEST['date']; // Agregamos la variable para la fecha
 
 // Verificar si se cargó una nueva imagen
