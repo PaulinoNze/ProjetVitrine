@@ -10,8 +10,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="./css/main.css">
-
-        <title>ExpertD.</title>
+        <link rel="shortcut icon" type="image/x-icon" href="img/ABDO.jpg">
+        <title>ABDO SARL</title>
         <style>
             .text-decoration-none:hover {
                 text-decoration: none;
@@ -92,9 +92,9 @@
                             <div class="customer-support">
                                 <i class="fa-solid fa-headset"></i>
                                 <div class="content-customer-support">
-                                    <span class="text">Soporte al cliente</span>
-                                    <span class="number">123-456-7890</span>
-                                </div>
+                                    <span class="text">Soutien à la clientèle</span>
+                                    <span class="number"> 0761816135</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -320,20 +320,20 @@
                 <div class="col-xs-12 col-md-6 col-lg-4">
                     <p class="h5 mb-3 text-dark"><strong>Contact</strong></p>
                     <div class="mb-2">
-                        <a class="text-dark text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a class="text-dark text-decoration-none" href="https://www.facebook.com/LIVRAISON.DAKHLA?mibextid=LQQJ4d"><i class="fab fa-facebook"></i> Facebook</a>
                     </div>
                     <div class="mb-2">
                         <a class="text-dark text-decoration-none" href="#"><i class="fab fa-twitter"></i> Twitter</a>
                     </div>
                     <div class="mb-2">
-                        <a class="text-dark text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a class="text-dark text-decoration-none" href="https://www.instagram.com/p/CiLYVLmL_tJ/?igsh=czljcDRvNHppMnFl"><i class="fab fa-instagram"></i> Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="bg-secondary text-white">
             <div class="container text-center py-4">
-                <p class="mb-0">&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+                <p class="mb-0">&copy; 2024  B2B2C ABDO SARL. Tous droits réservés.</p>
             </div>
         </footer>
 
