@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="./css/main.css">
         <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="blog.css" rel="stylesheet">
         <title>ExpertD.</title>
         <style>
             .text-decoration-none:hover {
@@ -33,19 +33,20 @@
                 margin-top: 2px;
                 /* Espacio entre el texto y la línea */
             }
-            .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
 
             .nav-link:hover {
                 text-decoration: none;
@@ -126,70 +127,129 @@
         <!--========================================================== -->
 
 
-<main class="container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-    </div>
-  </div>
-
-  <div class="row mb-2">
-  <div class="container">
-    <div class="row">
+        <main class="container">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark" style="
+    <?php
+    // Include necessary files and establish database connection
+    include_once 'PHP/functions.php';
+    include 'database.php';
+    
+    // Query to fetch the latest blog entry
+    $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+    $result = mysqli_query($conn, $sql);
+    
+    // Check if there are any blog entries
+    if (mysqli_num_rows($result) > 0) {
+        // Fetch the latest blog entry (first row in the result set)
+        $row = mysqli_fetch_assoc($result);
+        
+        // Check if the 'image' field is not empty
+        if (!empty($row['image'])) {
+            // Convert the image data to base64 format for embedding in CSS
+            $base64Image = base64_encode($row['image']);
+            // Create the CSS background image data URL
+            $imageDataUrl = "url('data:image/jpeg;base64," . $base64Image . "')";
+            // Output the background image style for the container
+            echo "background-image: " . $imageDataUrl . "; background-size: cover;";
+        }
+    }
+    ?>
+">
+    <?php
+    // Reset the internal data pointer of the result set to start over
+    mysqli_data_seek($result, 0);
+    
+    // Check if there are any blog entries
+    if (mysqli_num_rows($result) > 0) {
+        // Fetch the latest blog entry (first row in the result set)
+        $row = mysqli_fetch_assoc($result);
+        ?>
+        
+        <!-- Display the blog content inside the container -->
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic"><?php echo $row['blogNom']; ?></h1>
+            <p class="lead my-3"><?php echo $row['description']; ?></p>
+            <p class="lead mb-0"><a href="blogContent.php?id=<?php echo $row['blogid']; ?>" class="text-white fw-bold">Continuer la lecture...</a></p>
+        </div>
+        
         <?php
-        include_once 'PHP/functions.php';
-        include 'database.php';
-        $sql = "SELECT * FROM blog";
-        $result = mysqli_query($conn, $sql);
-        $count = 0; // Contador para dividir los blogs en dos columnas
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                ?>
-                <div class="col-md-6">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h3 class="card-title"><?php echo $row['blogNom']; ?></h3>
-                                    <p class="card-text"><?php echo $row['description']; ?></p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="blogContent.php?id=<?php echo $row['blogid']?>" class="btn btn-sm btn-outline-secondary">En savoir plus</a>
+    } else {
+        // No blog entries found
+        echo "<p>Aucun article trouvé.</p>";
+    }
+    ?>
+</div>
+
+
+            <div class="row mb-2">
+                <div class="container">
+                    <div class="row">
+                        <?php
+                        include_once 'PHP/functions.php';
+                        include 'database.php';
+
+                        $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+                        $result = mysqli_query($conn, $sql);
+
+                        $count = 0; // Contador para dividir los blogs en dos columnas
+
+                        if (mysqli_num_rows($result) > 0) {
+                            $firstRowSkipped = false; // Flag to track if we have skipped the first row (latest blog)
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                if (!$firstRowSkipped) {
+                                    // Skip the first row (latest blog)
+                                    $firstRowSkipped = true;
+                                    continue; // Skip this iteration and move to the next row
+                                }
+
+                                // Display all other blog entries
+                        ?>
+                                <div class="col-md-6">
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="row g-0">
+                                            <div class="col-md-8">
+                                                <div class="card-body" style="width: 400px; height: 400px; object-fit: cover;">
+                                                    <h3 class="card-title"><?php echo $row['blogNom']; ?></h3>
+                                                    <p class="card-text" ><?php echo $row['description']; ?></p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="btn-group">
+                                                            <a href="blogContent.php?id=<?php echo $row['blogid'] ?>" class="btn btn-sm btn-outline-secondary">En savoir plus</a>
+                                                        </div>
+                                                        <small class="text-muted"><?php echo formatDate($row['datePublished']); ?></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                                <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" class="img-fluid" style="height: 200px;" alt="Imagen del blog">
+                                            </div>
                                         </div>
-                                        <small class="text-muted"><?php echo formatDate($row['datePublished']); ?></small>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                                <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" class="img-fluid" style="height: 200px;" alt="Imagen del blog">
-                            </div>
-                        </div>
+                        <?php
+
+                                $count++;
+                                if ($count % 2 == 0) {
+                                    echo '</div><div class="row">';
+                                }
+                            }
+                        } else {
+                            echo "<div class='col p-4 d-flex flex-column position-static'>Aucun blog pour le moment</div>";
+                        }
+                        ?>
                     </div>
+
                 </div>
-                <?php
-                $count++;
-                if ($count % 2 == 0) {
-                    echo '</div><div class="row">';
-                }
-            }
-        } else {
-            echo "<div class='col p-4 d-flex flex-column position-static'>Aucun blog pour le moment</div>";
-        }
-        ?>
-    </div>
-</div>
 
 
-</div>
+            </div>
 
 
-  </div>
+            </div>
 
 
 
-</main>
+        </main>
         <!--========================================================== -->
         <!--FOOTER-->
         <!--========================================================== -->
@@ -246,7 +306,7 @@
         <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script>
-  feather.replace();
-</script>
+            feather.replace();
+        </script>
     </body>
 </php>
