@@ -257,8 +257,8 @@
         <div class="container-fluid d-flex justify-content-center">
             <div class="row p-5 bg-white text-dark border-top border-3">
                 <div class="col-xs-12 col-md-6 col-lg-5">
-                    <p class="h3 mb-3 text-dark"><strong>lorem</strong></p>
-                    <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque, tempora dignissimos, dolore nulla iste quis aut, quos voluptas !</p>
+                    <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+                    <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et dynamique. Depuis sa création, sous une forme juridique de société commerciale à responsabilité limitée, le transport urbain de marchandises, les opérations de livraison et l’installation des systèmes des caisses.</p>
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-3">
                     <p class="h5 text-dark"><strong>Link</strong></p>
