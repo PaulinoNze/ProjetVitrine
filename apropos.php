@@ -22,7 +22,7 @@
         <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="heroes.css" rel="stylesheet">
 
-        <title>ABDO SARL</title>
+        <title>sté B2B2C ABDO</title>
         <style>
             .img-team {
                 max-width: 100px;
@@ -93,7 +93,7 @@
         <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <span class="fs-5 text-primary fw-bold">ABDO SARL.</span>
+                    <span class="fs-5 text-primary fw-bold">sté B2B2C ABDO.</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -143,12 +143,11 @@
 
         <main class="border-top border-3">
             <div class="px-4 py-5 my-5 text-center">
-                <img class="d-block mx-auto mb-4" src="img/log.png" alt="" width="230" height="150">
-                <h1 class="display-5 fw-bold">B2B2C ABDO SARL</h1>
+                <img class="d-block mx-auto mb-4" src="img/ll.jpg" alt="" width="230" height="150" style="border-radius: 270px;">
+                <h1 class="display-5 fw-bold">sté B2B2C ABDO</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Notre société de marketing digital se spécialise dans le renforcement de la présence en ligne des entreprises de toutes tailles. Avec des stratégies innovantes et une approche axée sur les résultats, nous aidons nos clients à atteindre leurs objectifs commerciaux grâce à des campagnes efficaces sur les réseaux sociaux, la publicité en ligne, l'optimisation des moteurs de recherche et le développement web. </p>
+                    <p class="lead mb-4">Notre société de transporte se spécialise dans le renforcement de la présence en ligne des entreprises de toutes tailles dans le secteur du transport. Avec des stratégies innovantes et une approche axée sur les résultats, nous aidons nos clients à atteindre leurs objectifs commerciaux grâce à des campagnes efficaces sur les réseaux sociaux, la publicité en ligne, l'optimisation des moteurs de recherche et le développement web. </p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
                     </div>
                 </div>
             </div>
@@ -158,9 +157,9 @@
             <div class="px-4 pt-5 my-5 text-center border-bottom">
                 <h1 class="display-4 fw-bold text-primary">La maison de l'entreprise</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">ABDO SARL, une entreprise ancrée au cœur de Dakhla
+                    <p class="lead mb-4">sté B2B2C ABDO, une entreprise ancrée au cœur de Dakhla
 
-                        Implantée dans la ville de Dakhla, au coeur de la région du Sahara marocain, ABDO SARL a choisi ce lieu stratégique pour développer ses activités. Notre siège social se trouve dans le quartier dynamique de Molay Rachid, une zone en pleine expansion économique et entrepreneuriale.
+                        Implantée dans la ville de Dakhla, au coeur de la région du Sahara marocain, sté B2B2C ABDO a choisi ce lieu stratégique pour développer ses activités. Notre siège social se trouve dans le quartier dynamique de Molay Rachid, une zone en pleine expansion économique et entrepreneuriale.
 
                         Ce positionnement géographique nous permet d'être au plus près de nos clients et de nos partenaires, tout en bénéficiant des atouts de la région. La ville de Dakhla, véritable hub économique de la zone, offre un environnement propice aux affaires grâce à ses infrastructures modernes et son réseau de transport performant.</p>
                 </div>
@@ -192,80 +191,44 @@
             </div>
 
             <section class="container my-5">
-                <h2 class="text-center mb-4 text-primary"><strong>Équipe de direction</strong></h2>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <!-- Director -->
-                    <div class="col">
-                        <div class="card h-100">
+    <h2 class="text-center mb-4 text-primary"><strong>Équipe de direction</strong></h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <?php
+        include 'database.php';
+        $sql = "SELECT * FROM equipedirective";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+        ?>
+                <div class="col">
+                    <div class="card h-100">
+                        <?php
+                        if (!empty($row['image'])) {
+                        ?>
+<img src="<?php echo 'dashboard/equipeDirective/' . $row['image']; ?>" class="card-img-top rounded-circle img-team mx-auto" alt="" style="width: 200px; height: 120px;">
+                        <?php
+                        } else {
+                        ?>
                             <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del director">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Abdelghafour ELOUARDI</h5>
-                                <p class="card-text">Poste : Gérant et Social seller</p>
-                            </div>
+                        <?php
+                        }
+                        ?>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?php echo $row['nom']; ?> <?php echo $row['prenom']; ?></h5>
+                            <p class="card-text">Poste: <?php echo $row['descriptionPoste']; ?></p>
                         </div>
                     </div>
-                    <!-- Subdirector -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del subdirector">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Yassine OUSSAID</h5>
-                                <p class="card-text">Poste : Responsable
-                                    Commercial
-                                    FOOD</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Técnico -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del técnico">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Halima LAAFAR</h5>
-                                <p class="card-text">Poste : Réception
-                                    et Suivi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Recursos Humanos -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del de Recursos Humanos">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Mohamed Ahboub</h5>
-                                <p class="card-text">Poste : Social media
-                                    manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Secretario 1 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del Secretario 1">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Chakir MRANI
-                                </h5>
-                                <p class="card-text">Poste : Service de
-                                    Confirmation</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Secretario 2 -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto del Secretario 2">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Chadi KACIMI</h5>
-                                <p class="card-text">Poste : Responsable
-                                    Commercial
-                                    EXPRESS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Empleado 1 -->
-                    <!-- Agregar más tarjetas para más miembros del equipo -->
                 </div>
-            </section>
+        <?php
+            }
+        } else {
+            echo '<div class="col"><div class="card h-100"><div class="card-body text-center"><h5 class="card-title">Aucun Personne disponible</h5></div></div></div>';
+        }
+        ?>
+        <!-- Agrega más miembros del equipo de dirección aquí -->
+    </div>
+</section>
+
 
             <div class="b-example-divider"></div>
 
@@ -349,7 +312,7 @@
         <div class="container-fluid d-flex justify-content-center">
             <div class="row p-5 bg-white text-dark border-top border-3">
                 <div class="col-xs-12 col-md-6 col-lg-5">
-                    <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+                    <p class="h3 mb-3 text-dark"><strong>sté B2B2C ABDO</strong></p>
                     <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et
                         dynamique. Depuis sa création, sous une forme juridique de société commerciale
                         à responsabilité limitée, le transport urbain de marchandises, les opérations de
@@ -389,7 +352,7 @@
         </div>
         <footer class="bg-secondary text-white">
             <div class="container text-center py-4">
-                <p class="mb-0">&copy; 2024 B2B2C ABDO SARL. Tous droits réservés.</p>
+                <p class="mb-0">&copy; 2024 B2B2C sté B2B2C ABDO. Tous droits réservés.</p>
             </div>
         </footer>
 

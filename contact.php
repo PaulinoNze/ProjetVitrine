@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" href="img/log.png" type="image/x-icon">
 
-    <title>ABDO SARL</title>
+    <title>sté B2B2C ABDO</title>
     <style>
       .text-decoration-none:hover {
         text-decoration: none;
@@ -56,7 +56,7 @@
     <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <span class="fs-5 text-primary fw-bold">ABDO SARL.</span>
+          <span class="fs-5 text-primary fw-bold">sté B2B2C ABDO.</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -201,7 +201,7 @@
     <div class="container-fluid d-flex justify-content-center">
       <div class="row p-5 bg-white text-dark border-top border-3">
         <div class="col-xs-12 col-md-6 col-lg-5">
-          <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+          <p class="h3 mb-3 text-dark"><strong>sté B2B2C ABDO</strong></p>
           <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et 
 dynamique. Depuis sa création, sous une forme juridique de société commerciale 
 à responsabilité limitée, le transport urbain de marchandises, les opérations de 
@@ -241,7 +241,7 @@ livraison et l’installation des systèmes des caisses.</p>
     </div>
     <footer class="bg-secondary text-white">
       <div class="container text-center py-4">
-        <p class="mb-0">&copy; 2024 B2B2C ABDO SARL. Tous droits réservés.</p>
+        <p class="mb-0">&copy; 2024 B2B2C sté B2B2C ABDO. Tous droits réservés.</p>
       </div>
     </footer>
 

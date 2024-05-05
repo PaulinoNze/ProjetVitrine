@@ -13,7 +13,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['userid'])){
   <meta name="author" content="paulino nze, syabonga">
   <link rel="icon" href="../img/log.png" type="image/x-icon">
 
-  <title>Dashboard Admin</title>
+  <title>sté B2B2C ABDO</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/">
 
@@ -55,7 +55,7 @@ if(isset($_SESSION['email']) && isset($_SESSION['userid'])){
 <body>
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">sté B2B2C ABDO</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -90,6 +90,12 @@ if(isset($_SESSION['email']) && isset($_SESSION['userid'])){
                 Blog de Actualite
               </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../equipeDirective/equipeDirective.php">
+                  <span data-feather="user"></span>
+                  Equipe directive
+                </a>
+              </li>
           </ul>
 
 

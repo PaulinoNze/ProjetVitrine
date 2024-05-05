@@ -10,11 +10,11 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="paulino nze, siabonga">
     <meta name="generator" content="Hugo 0.84.0">
     <link rel="icon" href="../img/log.png" type="image/x-icon">
 
-    <title>Dashboard Admin</title>
+    <title>sté B2B2C ABDO</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/">
 
@@ -47,8 +47,8 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
   <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> sté B2B2C ABDO</a>
+          <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -82,6 +82,12 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                   Blog de Actualite
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="equipeDirective/equipeDirective.php">
+                  <span data-feather="user"></span>
+                  Equipe directive
+                </a>
+              </li>
             </ul>
 
 
@@ -94,7 +100,7 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
           </div>
           <div class="my-4 welcome-message text-center">
             <h2>Bienvenue dans le panneau d'administration</h2>
-            <img src="../img/log.png" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
+            <img src="../img/ll.jpg" alt="Logo de la empresa" class="img-fluid img-thumbnail rounded-circle mb-4" style="width: 150px; height: 150px;">
             <?php
             include '../database.php';
             $userid = $_SESSION['userid'];
@@ -395,6 +401,9 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="dashboard.js"></script>
+    <script>
+    feather.replace();
+  </script>
   </body>
 
   </html>
