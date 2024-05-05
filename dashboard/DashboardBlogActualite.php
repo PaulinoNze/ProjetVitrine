@@ -113,6 +113,10 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                         <label for="description">Description du blog (Max 35 mots)</label>
                         <textarea id="description" name="description" class="form-control" cols="30" rows="10" oninput="countWords()" required style="height: 100px;"></textarea>
                       </div>
+                      <div class="form-group">
+                        <label for="description">Lien</label><small> (Ne supprimez pas http://)</small>
+                        <input type="text" class="form-control" name="link" value="http://">
+                      </div>
                       <script>
                         function countWords() {
                           var textarea = document.getElementById("description");

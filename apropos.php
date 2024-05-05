@@ -272,37 +272,72 @@
             <section class="container py-5">
                 <h2 class="text-center mb-4 text-primary"><strong>Témoignages de clients</strong></h2>
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="card no-border">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 1">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Said</h5>
-                                <p class="card-text">Que ce soit pour la restauration, la photographie ou la communication marketing, ABDO SARL a toujours répondu présent. Leur professionnalisme et leur engagement font d'eux un partenaire de confiance au quotidien."</p>
+                    <?php
+                    include 'database.php';
+                    $sql = "SELECT * FROM temoignages";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                            <div class="item">
+                                <div class="card no-border">
+                                    <?php
+                                    if(!empty($row['image'])){
+                                    ?>
+                                    <img src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 1">
+                                    <?php
+                                    }else{
+                                    ?>
+                                    <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 1">
+                                    <?php
+                                    }
+                                    ?>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title"><?php echo $row['fullname']; ?></h5>
+                                        <p class="card-text"><?php echo $row['temoignages']; ?>mb</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card no-border">
-                            <img src="img/mujer-icono.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 2">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Khadija</h5>
-                                <p class="card-text">L'équipe e-commerce d'ABDO SARL a été d'une grande aide pour mettre en place notre boutique en ligne. Leur expertise et leur accompagnement sur-mesure ont boosté nos ventes de manière significative."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card no-border">
-                            <img src="img/hombre-icono2.jpeg" class="card-img-top rounded-circle img-team mx-auto" alt="Foto Cliente 2">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Abdel</h5>
-                                <p class="card-text">Grâce au service de transport de matériaux d'ABDO SARL, j'ai pu mener à bien tous mes chantiers dans les délais impartis. Leur réactivité et leur fiabilité m'ont permis de gagner en productivité et en tranquillité d'esprit."</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    } else {
+                        echo '<h2 class="text-center mb-4 text-primary">Aucun Témoignages</h2>';
+                    }
+                    ?>
                     <!-- Agrega más testimonios aquí -->
                 </div>
             </section>
 
+            <div class="col-lg-12 border rounded shadow-lg">
+
+                <form class="contact-form bg-white rounded p-5" id="comment-form" method="post" action="PHP/ajouttemoignages.php">
+                    <h4 class="mb-4">Écrire un témoignages</h4>
+                    <?php if (isset($_GET['message'])) { ?>
+                        <small class="message" style="color: green;"> <?php echo $_GET['message']; ?></small>
+                    <?php } ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="nom" id="nom" placeholder="Nom:" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Prenom:" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input type="file" name="image" class="form-control">
+                        <small class="form-text text-muted">Max. taille du fichier : 50 Mo. Images autorisées : jpg, gif, png. </small>
+                    </div>
+                    <br>
+                    <textarea class="form-control mb-3" name="temoignages" id="temoignages" cols="30" rows="5" placeholder="témoignages" required></textarea>
+
+                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Poster un témoignages">
+                </form>
+            </div>
 
         </main>
 
@@ -313,13 +348,13 @@
 
         <div class="container-fluid d-flex justify-content-center">
             <div class="row p-5 bg-white text-dark border-top border-3">
-            <div class="col-xs-12 col-md-6 col-lg-5">
-          <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
-          <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et 
-dynamique. Depuis sa création, sous une forme juridique de société commerciale 
-à responsabilité limitée, le transport urbain de marchandises, les opérations de 
-livraison et l’installation des systèmes des caisses.</p>
-        </div>
+                <div class="col-xs-12 col-md-6 col-lg-5">
+                    <p class="h3 mb-3 text-dark"><strong>ABDO SARL</strong></p>
+                    <p class="text-dark">Notre entreprise est en constante évolution et emploie une équipe jeune et
+                        dynamique. Depuis sa création, sous une forme juridique de société commerciale
+                        à responsabilité limitée, le transport urbain de marchandises, les opérations de
+                        livraison et l’installation des systèmes des caisses.</p>
+                </div>
                 <div class="col-xs-12 col-md-6 col-lg-3">
                     <p class="h5 text-dark"><strong>Link</strong></p>
                     <div class="mb-2">
@@ -354,7 +389,7 @@ livraison et l’installation des systèmes des caisses.</p>
         </div>
         <footer class="bg-secondary text-white">
             <div class="container text-center py-4">
-                <p class="mb-0">&copy; 2024  B2B2C ABDO SARL. Tous droits réservés.</p>
+                <p class="mb-0">&copy; 2024 B2B2C ABDO SARL. Tous droits réservés.</p>
             </div>
         </footer>
 

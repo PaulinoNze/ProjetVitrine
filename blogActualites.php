@@ -135,7 +135,7 @@
     include 'database.php';
     
     // Query to fetch the latest blog entry
-    $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+    $sql = "SELECT * FROM blog ORDER BY blogid DESC";
     $result = mysqli_query($conn, $sql);
     
     // Check if there are any blog entries
@@ -188,7 +188,7 @@
                         include_once 'PHP/functions.php';
                         include 'database.php';
 
-                        $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+                        $sql = "SELECT * FROM blog ORDER BY blogid DESC";
                         $result = mysqli_query($conn, $sql);
 
                         $count = 0; // Contador para dividir los blogs en dos columnas

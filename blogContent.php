@@ -94,7 +94,8 @@
                                 <div class="content-customer-support">
                                     <span class="text">Soutien à la clientèle</span>
                                     <span class="number"> 0761816135</span>
-                                </div>
+                                              
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -106,7 +107,7 @@
         <!--========================================================== -->
         <!--CONTENT-->
         <!--========================================================== -->
-        <section class="section blog-wrap bg-gray" >
+        <section class="section blog-wrap bg-gray">
             <br>
             <?php
             include "database.php";
@@ -130,10 +131,13 @@
                                                 <?php echo formatDate($row['datePublished']); ?></span>
                                         </div>
 
-                                        <h2 class="mt-3 mb-4"><?php echo $row['blogNom'] ?></h2>
+                                        <h2 class="mt-3 mb-4"><?php echo $row['blogNom']; ?></h2>
                                         <p class="lead mb-4"><?php echo nl2br($row['content']); ?></p>
-
-
+                                        <br>
+                                        <?php
+                                        $link = htmlspecialchars($row['link']);
+                                        echo '<p class="lead mb-4">Lien: <a href="' . $link . '">' . $link . '</a></p>';
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +263,7 @@
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_array($result)) {
                                 ?>
-                                        <div class="media border-bottom py-3 d-flex align-items-center" >
+                                        <div class="media border-bottom py-3 d-flex align-items-center">
                                             <!-- Image -->
                                             <a href="<?php echo $row['blogid']; ?>">
                                                 <img class="mr-4" src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" alt="" width="50px" style="margin-right: 10px;" class="img-fluid rounded">
@@ -333,7 +337,7 @@
         </div>
         <footer class="bg-secondary text-white">
             <div class="container text-center py-4">
-                <p class="mb-0">&copy; 2024  B2B2C ABDO SARL. Tous droits réservés.</p>
+                <p class="mb-0">&copy; 2024 B2B2C ABDO SARL. Tous droits réservés.</p>
             </div>
         </footer>
 

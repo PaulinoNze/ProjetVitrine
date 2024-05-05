@@ -228,7 +228,7 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                     <?php
                     include_once '../PHP/functions.php';
                     include '../database.php';
-                    $sql = "SELECT * FROM blog ORDER BY datePublished DESC";
+                    $sql = "SELECT * FROM blog ORDER BY blogid DESC";
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0) {
                       while ($row = mysqli_fetch_array($result)) {
@@ -253,25 +253,26 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
                               <small>Supprimer</small>
                             </button>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                                  <script>
-                                    function deleteblog(blogid) {
-                                      $.ajax({
-                                        url: '../PHP/deleteblog.php',
-                                        type: 'POST',
-                                        data: {
-                                          blogid: blogid
-                                        },
-                                        success: function(response) {
-                                          window.location.reload();
-                                        },
-                                        error: function(xhr, status, error) {
-                                          console.error(xhr.responseText);
-                                        }
-                                      });
-                                    }
-                                  </script>
+                            <script>
+                              function deleteblog(blogid) {
+                                $.ajax({
+                                  url: '../PHP/deleteblog.php',
+                                  type: 'POST',
+                                  data: {
+                                    blogid: blogid
+                                  },
+                                  success: function(response) {
+                                    window.location.reload();
+                                  },
+                                  error: function(xhr, status, error) {
+                                    console.error(xhr.responseText);
+                                  }
+                                });
+                              }
+                            </script>
                           </div>
                         </div>
+
 
                     <?php
                       }
@@ -285,8 +286,99 @@ if (isset($_SESSION['userid']) && isset($_SESSION['email'])) {
 
                 </div>
               </div>
+              <div class="row">
+                <div class="col-lg-12 mb-5">
+                  <div class="comment-area card border-0 p-5" style="height: 450px; overflow-y: auto;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <?php
+                      include "../database.php";
+                      $sql = "SELECT count(*) FROM temoignages";
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_array($result)
+
+                      ?>
+                      <h4 class="mb-0">Témoignages (<?php echo $row['count(*)']; ?>)</h4>
+                      <h5 class="mb-0"><a href="#" style="color: red; text-decoration: none;" onclick="deleteAlltemoignages(event)">Supprimer tout</a></h5>
+
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                      <script>
+                        function deleteAlltemoignages(event) {
+                          event.preventDefault(); // Prevent the default action of the anchor tag
+                          $.ajax({
+                            url: '../PHP/deleteAlltemoignages.php',
+                            type: 'POST',
+                            success: function(response) {
+                              window.location.reload(); // Reload the page after successful deletion
+                            },
+                            error: function(xhr, status, error) {
+                              console.error(xhr.responseText);
+                              alert('An error occurred. Please try again.'); // Display an error message to the user
+                            }
+                          });
+                        }
+                      </script>
+
+                    </div>
+                    <ul class="comment-tree list-unstyled">
+                      <?php
+                      include "../database.php";
+                      include_once '../PHP/functions.php';
+                      $sql = "SELECT * FROM temoignages ORDER BY temoignagesId DESC";
+                      $result = mysqli_query($conn, $sql);
+                      if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                      ?>
+                          <li class="mb-5">
+                            <div class="comment-area-box d-flex align-items-start">
+                              <?php
+                              if (!empty($row['image'])) {
+                              ?>
+                                <img alt="" src="<?php echo 'data:image;base64,' . base64_encode($row['image']); ?>" width="50px" class="mr-3 comment-profile-img" style="margin-right: 10px;">
+                              <?php
+                              } else {
+                                echo '<img alt="" src="../img/profile.png" width="50px" class="mr-3 comment-profile-img" style="margin-right: 10px;"> <!-- Image with margin-right -->';
+                              }
+                              ?>
+                              <div>
+                                <h5 class="mb-1"><?php echo $row['fullname'] ?></h5> <!-- Name -->
+                                <p class="mt-3 mb-0"><?php echo nl2br($row['temoignages']); ?></p> <!-- Comment content with top margin -->
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete_employee" onclick="deletetemoignages(<?php echo $row['temoignagesId']; ?>)">
+                                  <small>Supprimer</small>
+                                </button>
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                <script>
+                                  function deletetemoignages(temoignages) {
+                                    $.ajax({
+                                      url: '../PHP/deletetemoignages.php',
+                                      type: 'POST',
+                                      data: {
+                                        temoignagesId: temoignages // Change temoignagesId to temoignages
+                                      },
+                                      success: function(response) {
+                                        window.location.reload();
+                                      },
+                                      error: function(xhr, status, error) {
+                                        console.error(xhr.responseText);
+                                      }
+                                    });
+                                  }
+                                </script>
+                              </div>
+                            </div>
+                          </li>
+                      <?php
+                        }
+                      } else {
+                        echo "<h3> Pas des Témoignages </h3>";
+                      }
+                      ?>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
       </div>
 
 
