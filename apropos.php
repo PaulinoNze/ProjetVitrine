@@ -273,7 +273,7 @@
 
             <div class="col-lg-12 border rounded shadow-lg">
 
-                <form class="contact-form bg-white rounded p-5" id="comment-form" method="post" action="PHP/ajouttemoignages.php">
+                <form class="contact-form bg-white rounded p-5" id="comment-form" method="post" action="PHP/ajouttemoignages.php" enctype="multipart/form-data">
                     <h4 class="mb-4">Écrire un témoignages</h4>
                     <?php if (isset($_GET['message'])) { ?>
                         <small class="message" style="color: green;"> <?php echo $_GET['message']; ?></small>
