@@ -257,7 +257,7 @@
                                     ?>
                                     <div class="card-body text-center">
                                         <h5 class="card-title"><?php echo $row['fullname']; ?></h5>
-                                        <p class="card-text"><?php echo $row['temoignages']; ?>mb</p>
+                                        <p class="card-text"><?php echo $row['temoignages']; ?></p>
                                     </div>
                                 </div>
                             </div>
